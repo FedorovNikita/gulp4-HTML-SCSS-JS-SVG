@@ -18,6 +18,7 @@ global.$ = {
     rename: require('gulp-rename'),
     del: require('del'),
     htmlmin: require('gulp-htmlmin'),
+    webp: require('gulp-webp'),
     browserSync : require('browser-sync').create(),
 
     path: {
@@ -31,12 +32,12 @@ $.path.tasks.forEach(function (taskPath) {
 
 $.gulp.task('default', $.gulp.series(
     'clean',
-    $.gulp.parallel('html', 'sass:dev', 'scripts:lib', 'scripts', 'img:dev', 'svg', 'fonts'),
+    $.gulp.parallel('html', 'sass:dev', 'scripts:lib', 'scripts', 'img:dev', 'webp', 'svg', 'fonts'),
     $.gulp.parallel('watch', 'serve')
 ));
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('html', 'sass:build', 'scripts:lib', 'scripts', 'img:build', 'svg', 'fonts'),
+    $.gulp.parallel('html', 'sass:build', 'scripts:lib', 'scripts', 'img:build', 'webp', 'svg', 'fonts'),
     $.gulp.parallel('watch', 'serve')
 ));

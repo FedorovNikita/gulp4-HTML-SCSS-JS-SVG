@@ -15,4 +15,10 @@ module.exports = function() {
             ]))
             .pipe($.gulp.dest('build/static/img'));
     });
+
+    $.gulp.task('webp', function () {
+        return $.gulp.src('src/static/img/*.{png,jpg}')
+        .pipe($.webp({quality: 90}))
+        .pipe($.gulp.dest('build/static/img'));
+    });
 }
