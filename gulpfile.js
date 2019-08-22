@@ -17,6 +17,7 @@ global.$ = {
     svgmin: require('gulp-svgmin'),
     rename: require('gulp-rename'),
     del: require('del'),
+    htmlmin: require('gulp-htmlmin'),
     browserSync : require('browser-sync').create(),
 
     path: {
