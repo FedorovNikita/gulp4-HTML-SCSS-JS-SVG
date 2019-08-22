@@ -7,9 +7,11 @@ module.exports = function() {
     $.gulp.task('img:build', function () {
         return $.gulp.src('src/static/img/*.{png,jpg,svg}')
             .pipe($.imagemin([
-                $.mozjpeg({
-                quality: 65
-                })
+                // $.mozjpeg({
+                // quality: 65
+                // }),
+                $.imagemin.jpegtran({progressive: true}),
+                $.imagemin.optipng({optimizationLevel: 3})
             ]))
             .pipe($.gulp.dest('build/static/img'));
     });
