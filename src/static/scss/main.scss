@@ -1,2 +1,44 @@
-@import 'libs.scss';
+// vars
+$tablet-width: 768px;
+$desktop-width: 1200px;
+$mobile-width-only: 767px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+// layout
+@import '_misc/fonts';
+@import '_misc/libs';
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+html {
+    box-sizing: border-box; 
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit; 
+}
+body {
+    margin: 0; 
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+    text-decoration: none; 
+}
+
+// styles
 
